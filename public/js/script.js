@@ -142,10 +142,14 @@ $('#logo img').click(function(){
   $('section#home').show();
   $('section#end').show();
   $('section#form').hide();
-})
+});
   
-  
-  
+$('a.more').click(function(e){
+  e.preventDefault();
+  $(this).hide();
+  $('.moreinfo').slideDown(200);
+});
+
 }); //eo doc ready
 
 

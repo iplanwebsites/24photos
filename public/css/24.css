@@ -6,6 +6,9 @@ h1, h2, h3, h4{
 	font-size: 34px;
 	color:#333;
 }
+
+h1{font-size: 80px; margin-top:30px; }
+h3{font-size: 22px; }
 a, button{cursor:pointer;}
 
 a, a:visited, a:hover{ color: #292;}
@@ -16,23 +19,31 @@ h1, h2, h3, h4, p{
 p{ margin-bottom:30px; margin-top:20px; line-height: 1.8em; }
 .grid_6 p{ width:90%}
 
+strong{font-weight:bold; }
 
 
 /*/////////////////////////////
 //   Home
 ///////////////////////////////// */
+p.what{ 
+  width:500px; display:block; margin:auto; 
+  font-size:14px; line-height:1.1em; margin-top:40px;
+  color:#999;
+  font-style:italic;
+  }
 #logo img{ 
   margin:auto; display:block;
 	margin-top:20px;
   height:96px;
   height:60px;
+  cursor:pointer;
   }
  #logo h2{
    
 	text-transform:uppercase;
 	color: #777;
 	margin-top:10px;
-	margin-bottom:40px;
+	margin-bottom:0px;
 	
 	font-size:11px;
 	display:block;
@@ -47,11 +58,17 @@ div.pitch h1{
   font-size:63px; text-align:justify; color:#999; 
 }
 div.pitch p{font-size:18px;}
-
+section#home div.pitch h1{ margin-top:60px;}
 
 img.picturehome{width:700px; margin:auto; display:block; }
 
+.moreinfo{display:none}
 
+button.connect{width:300px; display:block; margin:auto; margin-top:0px; margin-bottom:0px;}
+button.punch:active{margin-top:10px; margin-bottom:-10px;}
+button.connect small{font-size:0.5em;}
+
+a.connect{width:300px; display:block; margin:auto; margin-top:0px; margin-bottom:0px; text-align:center; margin-top:20px; }
 
 /*/////////////////////////////
 //   Formulaire
@@ -59,11 +76,42 @@ img.picturehome{width:700px; margin:auto; display:block; }
 section#form{display:none;}
 section#merci{display:none;}
 
+span.mandatory{color:#f33; font-size:30px; float:right; }
 
+form#apply label{
+  padding-right:20px; width:120px;  display:block; float:left;
+  margin-top:10px;
+  cursor:default;
+  }
+form#apply label.long{width:180px; }
+form#apply input.chk{margin-left:20px; margin-right:10px; margin-top:10px; }
 
+span.radiolabel{float:left; padding-right:30px; padding-left:10px;}
 
-h1{font-size: 80px; margin-top:70px; }
-h3{font-size: 22px; }
+form#apply input, form#apply textarea{
+  display:block; float:left;
+  padding:5px;
+  font-size:20px;
+  color:#777;
+}
+form#apply textarea{ width:450px; height:200px; display:block; clear:both; display:block;  }
+form#apply input:focus, form#apply textarea:focus{
+  color:#000;
+}
+form#apply li{ 
+  margin-top:5px;
+  clear:both; 
+  /*border-top:1px solid #ccc; */
+  background:#f3f3f3; 
+  min-height:40px;
+  padding:10px; list-style:none; 
+  padding-left:15px;
+}
+form#apply li.desc{
+  height:330px;
+}
+
+button.punch.submit{ clear:both; margin-top:-50px; margin-right:30px;}
 
 body{background:#ccc;  font-size:16px;}
 #main{ background:#fff; padding-top:30px; margin:15px 0; padding-left:40px; padding-right:40px;  }
@@ -72,6 +120,13 @@ hr{ background:#fff; color:#fff; height:1px; margin: 0px 0px; border-bottom:dash
 
 a.url{ float:right; background:#333; padding:3px 10px; padding-top:0px; color:#fff; text-decoration:none;  }
 a.url:hover{ color: #0f0; }
+
+
+
+/*/////////////////////////////
+//   Old stuff, pulled over
+///////////////////////////////// */
+
 
 #title h1{ font-size: 150px; 
 	line-height:1em;

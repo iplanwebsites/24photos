@@ -9,23 +9,47 @@
 
 
 
+
 %section#home
+  %p.what
+    24photos est une plateforme de publication de photos et de distribution d'appareil photos permettant à des gens de partout au québec de partager leur point de vue avec un large auditoire, entièrement gratuitement.
   %div.pitch
     %h1 Participants Recherchés
     %p
       %strong Partagez votre regard sur le monde.
       Ce projet s'adresse aux québécois de tout âge, urbains ou rureaux, aux vies banales ou exaltantes; c'est votre regard qui nous intéresse.
       Un appareil photo vous est gratuitement envoyé par la poste (ainsi qu'une enveloppe retour); aucune notion de photographie n'est nécessaire. 
-      Vos images sont publié ici, auprès des celles des autres participants.
+      Vos images seront publié ici, auprès des celles des autres participants.
   
       Si vous avez le désir de documenter votre entourage ou d'exprimer quelque chose avec la photographie, ce projet est pour vous.
-      %br
-  %br
-
-  %button.punch.left.connect
+      %a.more plus d'information
+    %div.moreinfo
+      %p
+        %strong Émanciper.
+        Ce projet vise avant tout à proposer à 300 personnes d'aborder le médium photographique d'une façon différente (n'avons-nous pas tous un peu tendance à photographier couché de soleil, chatons, et fleurs?) 
+      %p
+        %strong Partager, Documenter.
+        Même si tout le monde dispose aujourd'hui d'une caméra sur son téléphone et d'une page pour les publié, collactivement nous connaissons étonament peu de choses à props de la vie des autres. Ce projet propose de couper court dans la superficialité, et propose aux participants de "dire" quelque chose avec 24 photos. 
+      %p
+        %strong Quoi photographier?
+        Les participants sont libre d'aborder le projet comme ils l'entendent; aucuns thèmes ou approche n'est imposé. Voici quelques exemples:
+        %li  Un mère monoparentale de Rimouski présente les moments tristes et heureux de ses enfants.
+        %li  Un chaufeur de taxi de Montréal  trace un portrait des collègues avec qui il blague la nuit en attentant des clients à la gare routière. 
+        %li  Stéphanie documente le tracé organique des sentiers qui découpe les places et parcs montréalais l'hivers. 
+        %li  Zoé montre comment ces personnes qui s'engoufrent dans l'autobus 61 chaque matin paraissent distantes et seules.
+        %li  Lorsqu'il livre les journeaux à l'autore, Richard photographie les veilles granges qui orgne les routes montagneuse de sa Beauce natale.
+        %li  Julien de Blainville montre les efforts (parfois risible) de ses voisins pour personaliser leur maison pré-fabriqué.
+        %li  Sébastien donne un apperçu des folies des employés au centre d'appel où il travaille de nuit.
+        %li  Sarah propose un baiser à 24 inconnus et documente cet instant magique.
+        %li  Rémi fait découvrir la scène gothique de Québec. 
+        %li  Rachelle répertorie la variété des manteaux canins qu'abhore les chiens d'outremonts. 
+      
+    %br
+  %button.punch.connect
     M'inscrire
+    %small via facebook
     
-  %a.connect je n'ai pas facebook
+  %a.connect inscription manuelle
 
   %br
   %div.clear
@@ -41,37 +65,73 @@
     %form#apply
       %ol
       %li
-        %label{:for => "name"} Name:
-        %input{:type => "text", :name => "name", :class => "text"}
+        %label{:for => "email"} 
+          Courriel:
+          %span.mandatory *
+        %input{:type => "text", :name => "email", :class => "text", :size => "23"}
       %li
-        %label{:for => "birthday"} age:
-        %input{:type => "text", :name => "birthday", :class => "text"}
+        %label{:for => "name"} 
+          Nom:
+          %span.mandatory *
+        %input{:type => "text", :name => "name", :class => "text", :size => "20"}
+        %input.chk{:type => "checkbox", :name => "anonym",  :value => "true"}
+        %label.long{:for => "anonym"} Participer anonymement
+      
       %li
-        %label{:for => "email"} Courriel:
-        %input{:type => "text", :name => "email", :class => "text"}
+        %label{:for => "birthday"} 
+          Âge:
+          %span.mandatory *
+        %input{:type => "text", :name => "birthday", :class => "text", :size => "3"}
+        %input.chk{:type => "checkbox", :name => "no-age",  :value => "true"}
+        %label.long{:for => "no-age"} Masquer mon âge
       %li
-        %label{:for => "location"} Ville:
-        %input{:type => "text", :name => "location", :class => "text"}
+        %label{:for => "gender"} 
+          Sexe:
+          %span.mandatory *
+        %input{:type => "radio", :name => "gender", :value => "male"}
+        %span.radiolabel Homme
+        %input{:type => "radio", :name => "gender", :value => "female"}
+        %span.radiolabel Femme
+      
       %li
-        %label{:for => "postcode"} Code Postal:
-        %input{:type => "text", :name => "postcode", :class => "text"}
-
+        %label{:for => "location"} 
+          Ville:
+          %span.mandatory *
+        %input{:type => "text", :name => "location", :class => "text", :size => "15"}
+      %li
+        %label{:for => "postcode"} 
+          Code Postal:
+          %span.mandatory *
+        %input{:type => "text", :name => "postcode", :class => "text", :size => "9"}
+      %li
+        %label{:for => "address"} 
+          Adresse:
+          %span.mandatory *
+        %input{:type => "text", :name => "address", :class => "text", :size => "23"}
         
       %li
         %label{:for => "website"} Site Internet:
         %input{:type => "text", :name => "website", :class => "text"}
       %li
-        %label{:for => "mail"} email:
-        %input{:type => "text", :name => "mail", :class => "text"}
         
         
-      %li
-        %label{:for => "body"} Comment aimeriez-vouz abordez le projet? Qu'est-ce qui vous touche? Qu'aimeriez-vous partager?:
-        %textarea{:name => "body"}
-      %input{:type => "submit", :value => "Send", :class => "button"}
+        
+        
+      %li.desc
+        %h5 
+          %strong Comment aborderez-vous le projet? 
+          %br
+          Avez-vous déjà des idées?
+          %br
+          Qu'est-ce qui vous touche? 
+          %br
+          Qu'aimeriez-vous partager?
+        %br
+        %textarea{:name => "presentation"}
+        %button.punch.right.submit Envoyer
   %br
 
-  %button.punch.right.submit Envoyer
+  
 
   %br
   %div.clear
@@ -127,7 +187,7 @@
   %hr
   %br
   %footer
-    Soumission, mise en page, site et contenu par 
+    Site et contenu par 
     %a(href="http://iplanwebsites.com/") I Plan Website
     %br
     Site fonctionnant sur Heroku, avec Ruby, Sinatra, Haml, HTML5 CSS3 et Boilerplate.
