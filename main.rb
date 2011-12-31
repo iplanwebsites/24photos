@@ -77,23 +77,24 @@ end
 post '/apply' do
   t = Time.now 
   #content_type 'text/html', :charset => 'utf-8'
- 
-  email = params[:email]
-  name = params[:name]
-  fb = params[:fb]
+  doc = params
+
   uri = URI.parse(ENV['MONGOHQ_URL'])
   conn = Mongo::Connection.from_uri(ENV['MONGOHQ_URL'])
   db = conn.db(uri.path.gsub(/^\//, ''))
   coll = db.collection("24photos2012")
-  
- doc = {"email" => email, "name" => name}
- doc = params
   coll.insert(doc)
   
   if request.xhr?
     "true"
   else
-    "Thanks! We've got your email and will be in touch as soon as we're ready :)"
+    "Thanks! We've got your application and will be in touch as soon as we're ready :)"
   end
 end
+
+
 #coll.update({"_id" => doc["_id"]}, {"$set" => {"name" => "MongoDB Ruby"}})
+ # email = params[:email]
+ # name = params[:name]
+ # fb = params[:fb]
+  #doc = {"email" => email, "name" => name}
