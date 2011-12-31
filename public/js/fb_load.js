@@ -1,11 +1,19 @@
 window.fbAsyncInit = function() {
-   FB.init({
-     appId      : '163285813778579', // App ID
-    channelUrl : '//127.0.0.1:9393/channel.html', // Channel File
+  
+  var dataFB = {
+     appId      : '306188538557', // App ID LIVE
+     channelUrl : '//http://photos24.heroku.com/channel.html', // Channel File
      status     : true, // check login status
      cookie     : true, // enable cookies to allow the server to access the session
      xfbml      : true  // parse XFBML
-   });
+   }
+   if(window.location.host == "127.0.0.1:9393"){
+     window.dev = 1; 
+     dataFB['appId'] = '163285813778579';
+     dataFB['channelUrl'] = '//127.0.0.1:9393/channel.html';
+   }
+  
+   FB.init(dataFB);
 
 
    console.log('fb here!');
