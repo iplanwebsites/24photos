@@ -1,0 +1,92 @@
+
+
+
+h1, h2, h3, h4{
+	font-family: 'gothamBold', arial, verdana;
+	font-size: 34px;
+	color:#333;
+}
+
+
+a, a:visited, a:hover{ color: #292;}
+
+h1, h2, h3, h4, p{
+	line-height:0.9em;
+}
+p{ margin-bottom:30px; margin-top:20px; width:70%; line-height: 1.8em; }
+.grid_6 p{ width:90%}
+
+h1{font-size: 80px; margin-top:70px; }
+h3{font-size: 22px; }
+
+body{background:#ccc;  font-size:16px;}
+#main{ background:#fff; padding-top:30px; margin:15px 0; padding-left:40px; padding-right:40px;  }
+
+hr{ background:#333; height:1px; margin: 0px 0px; border-bottom:solid 10px #333;}
+a.url{ float:right; background:#333; padding:3px 10px; padding-top:0px; color:#fff; text-decoration:none;  }
+a.url:hover{ color: #0f0; }
+
+#title h1{ font-size: 150px; 
+	line-height:1em;
+	letter-spacing:-10px; text-transform:uppercase; text-align:right;
+	margin-top:-20px;
+	font-family: 'GothamLight', arial, verdana;
+	font-weight:normal;
+	}
+
+#me{float:right; width:370px; padding:0; margin-right:233px; }
+#me span{margin:0px; padding:0px;}
+#client{line-height:1.2em; width:370px; }
+
+#client p span, #me p span{ display:block;}
+
+#logo, img.logo{float:left;}
+#logo h1{
+	text-transform:uppercase;
+	background: #333;
+	color: #fff;
+	padding:3px 8px;
+	margin-top:10px;
+	
+	font-size:40px;
+	display:inline;
+	padding:5px 10px;
+	padding-left:20px;
+	padding-right:40px;
+	margin-top:40px;
+	line-height:1.5em;
+}
+img.logo{display:none;}
+
+ul li{
+	margin:0px;
+	padding: 5px 0;
+	padding-left:10px;
+	border-bottom:#333 1px dashed;
+	line-height:1.8em;
+}
+ul{padding:0px; margin:0px; margin-bottom: 20px; 
+	margin-bottom: 10px; list-style:square;  
+	list-style-position:inside; 
+}
+
+p, h1, li, strong, h2,h3{
+	-webkit-transition: all 0.2s ease-in-out;
+-moz-transition: all 0.2s ease-in-out;
+-o-transition: all 0.2s ease-in-out;
+-ms-transition: all 0.2s ease-in-out;
+transition: all 0.2s ease-in-out;
+}
+p:hover, h1:hover, li:hover, strong:hover, h2:hover, h3:hover{ background:#bfb;}
+
+
+
+
+@media print {
+	a.url{ display:none; }
+	img.logo{display:block;}
+	#logo{display:none}
+	.page-break { page-break-before:always;  }
+}
+
+

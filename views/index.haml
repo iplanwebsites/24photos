@@ -1,0 +1,135 @@
+
+
+
+%br
+
+#logo
+  %img{:src => '/img/24_400.gif'}/
+  %h2 Racompter des histoires: Faire parler les images.
+
+
+
+%section#home
+  %div.pitch
+    %h1 Participants Recherchés
+    %p
+      %strong Partagez votre regard sur le monde.
+      Ce projet s'adresse aux québécois de tout âge, urbains ou rureaux, aux vies banales ou exaltantes; c'est votre regard qui prime.
+      Un appareil photo vous est gratuitement envoyé par la poste (ainsi qu'une enveloppe retour); aucune notion de photographie n'est nécessaire. 
+      Vos images sont publié ici, auprès des celles des autres participants.
+  
+      Si vous avez le désir de documenter votre entourage ou d'exprimer quelque chose avec la photographie, ce projet est pour vous.
+      %br
+  %br
+
+  %button.punch.left.connect
+    M'inscrire
+    
+  %a.connect je n'ai pas facebook
+
+  %br
+  %div.clear
+
+
+%section#form
+  %div.pitch
+    %h1 Inscription
+    %p
+      %strong Formulaire de participation.
+      (bla bla bla?)
+      %br
+    %form#apply
+      %ol
+      %li
+        %label{:for => "name"} Name:
+        %input{:type => "text", :name => "name", :class => "text"}
+      %li
+        %label{:for => "birthday"} age:
+        %input{:type => "text", :name => "birthday", :class => "text"}
+      %li
+        %label{:for => "email"} Courriel:
+        %input{:type => "text", :name => "email", :class => "text"}
+      %li
+        %label{:for => "location"} Ville:
+        %input{:type => "text", :name => "location", :class => "text"}
+      %li
+        %label{:for => "postcode"} Code Postal:
+        %input{:type => "text", :name => "postcode", :class => "text"}
+
+        
+      %li
+        %label{:for => "website"} Site Internet:
+        %input{:type => "text", :name => "website", :class => "text"}
+      %li
+        %label{:for => "mail"} email:
+        %input{:type => "text", :name => "mail", :class => "text"}
+        
+        
+      %li
+        %label{:for => "body"} Comment aimeriez-vouz abordez le projet? Qu'est-ce qui vous touche? Qu'aimeriez-vous partager?:
+        %textarea{:name => "body"}
+      %input{:type => "submit", :value => "Send", :class => "button"}
+  %br
+
+  %button.punch.right.submit Envoyer
+
+  %br
+  %div.clear
+
+
+
+%br
+
+
+%br
+
+
+
+%section#merci
+  %div.pitch
+    %h1 Merci!
+    %p
+      %strong Votre demande à bien été reçu.
+      %br
+      Nous vous contacterons par email dès que l'envois des appareils photos débutera.
+      %br
+      D'ici là, n'hésitez pas à parler du projet à vos amis, collègues, familles et connaisances qui serraient possiblemetn intéressé à participer.
+      %br
+      <div class="fb-like" data-send="true" data-width="450" data-show-faces="true"></div>
+      %br
+      %br
+      %a{:href => '/'} retour à l'accueil
+      %br
+  %br
+
+  %button.punch.left.connect
+    M'inscrire
+    
+ 
+
+  %br
+  %div.clear
+
+
+
+
+
+%section#end
+  %img.picturehome{:src => '/img/robert_1.jpg'}/
+
+
+
+
+  %br
+  %br
+  %br
+
+  %hr
+  %br
+  %footer
+    Soumission, mise en page, site et contenu par 
+    %a(href="http://iplanwebsites.com/") I Plan Website
+    %br
+    Site fonctionnant sur Heroku, avec Ruby, Sinatra, Haml, HTML5 CSS3 et Boilerplate.
+
+  %br
