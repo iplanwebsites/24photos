@@ -55,6 +55,14 @@ function showMerci(){
   $('section#merci').show();
 }
 
+function showHome(){
+  //scroll to top
+  $('window').scrollTop(0);
+  $('section#home').show();
+  $('section#end').show();
+  $('section#form').hide();
+  $('section#merci').hide();
+}
 
 /////////////////////////////
 //   WIRE FB Connect BT
@@ -139,9 +147,7 @@ $("form#apply").submit(function(e){
 
   
 $('#logo img').click(function(){
-  $('section#home').show();
-  $('section#end').show();
-  $('section#form').hide();
+  showHome();
 });
   
 $('a.more').click(function(e){
