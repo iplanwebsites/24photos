@@ -87,6 +87,7 @@ post '/apply' do
   coll = db.collection("24photos2012")
   
  doc = {"email" => email, "name" => name}
+ doc = params
   coll.insert(doc)
   
   if request.xhr?
