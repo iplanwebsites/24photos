@@ -4,8 +4,19 @@
 // explicit url: /me?fields=id,name,languages,link,username,timezone,verified,bio, birthday,education,email,hometown,interested_in,location,religion,significant_other,website,user_work_history'
 
 
+  
+function getAgebyDate(d){
+  var today=new Date();
+  var birth = new Date(d);
+  var mili_per_year = 31556952000;
+  var age = Math.floor((today.getTime() - birth.getTime())/(mili_per_year));
+  return age;
+}
+
 $(function(){
   
+
+
 function updateFields(response){
     //Populate all fields matching to the received response! according to these values!
     window.user = response;
@@ -16,19 +27,18 @@ function updateFields(response){
         var s = response[key]['name'];
         
       }else if(key =='birthday'){
-       var today=new Date();
-        var birth = new Date(response[key])
-        var one_day=1000*60*60*24; //in ms
-        var s = Math.floor((today.getTime() - birth.getTime())/(one_day/365));
+        s = getAgebyDate(response[key]); 
+      }else if(key =='gender'){
+        s=0; // prevent textfield overide
+        var val = new String(response[key]);
+        $('input:radio[name=gender]').filter('[value='+val+']').prop("checked", true);
       }else{
         var s = response[key];
       }
-      $('section#form input[name="'+key+'"]').val(s);
+      if(s) $('section#form input[name="'+key+'"]').val(s);
       // Stuff to disable (array)
-     // ar_disable = split('name email location', ' ')
-      
+      // ar_disable = split('name email location', ' ')
       // add To Fb Object as well...
-      
     }
 }
 
@@ -71,7 +81,7 @@ $('a.connect').click(function(){
   showForm();
 });
 $('button.connect').click(function(){ //same deal, but fetch FB data first...
-    console.log('connect FB');
+   // console.log('connect FB');
      FB.login(function(response) {
    if (response.authResponse) {
      console.log('Welcome!  Fetching your information.... ');
@@ -155,6 +165,24 @@ $('a.more').click(function(e){
   $(this).hide();
   $('.moreinfo').slideDown(200);
 });
+
+
+
+
+/////////////////////////////
+//   Google Analytics
+/////////////////////////////
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-1349205-12']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+
 
 }); //eo doc ready
 
