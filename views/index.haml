@@ -32,7 +32,7 @@
         Même si tout le monde dispose aujourd'hui d'une caméra sur son téléphone et d'une page pour les publier, collectivemen nous connaissons étonnamment peu de choses à props de la vie des autres. Ce projet propose de couper court dans la superficialité, et propos aux participants de "dire" quelque chose avec 24 photos. 
         
       /
-        / put P back one notch...
+        put P back one notch...
         %p
         %strong Quoi photographier?
         Les participants sont libres d'aborder le projet comme ils l'entendent; aucuns thèmes ou approche n'est imposé. Voici quelques exemples:
@@ -43,7 +43,7 @@
         %li  Lorsqu'il livre les journaux  à l'aurore, Richard photographie les veilles granges qui longe les routes montagneuse de sa Beauce natale.
         %li  Julien de Blainville montre les efforts (parfois risible) de ses voisins pour personnaliser leur maisons préfabriquées.
         %li  Sébastien donne un aperçu des folies des employés au centre d'appel où il travaille de nuit.
-        %li  Sarah propose un baiser à 24 inconnus et documente cet instant magique.
+        %li  Sophie propose un baiser à 24 inconnus et documente cet instant magique.
         %li  Rémi fait découvrir la scène gothique de Québec. 
         %li  Rachelle répertorie la variété des manteaux canins qu'abhorre les chiens d'outremonts. 
       
@@ -71,12 +71,12 @@
         %label{:for => "email"} 
           Courriel:
           %span.mandatory *
-        %input{:type => "text", :name => "email", :class => "text", :size => "23"}
+        %input{:type => "text", :name => "email", :class => "text", :size => "23", :validation => 'required email'}
       %li
         %label{:for => "name"} 
           Nom:
           %span.mandatory *
-        %input{:type => "text", :name => "name", :class => "text", :size => "20"}
+        %input{:type => "text", :name => "name", :class => "text", :size => "20", :validation => 'required'}
         %input.chk{:type => "checkbox", :name => "anonym",  :value => "true"}
         %label.long{:for => "anonym"} Participer anonymement
       
@@ -84,7 +84,7 @@
         %label{:for => "birthday"} 
           Âge:
           %span.mandatory *
-        %input{:type => "text", :name => "birthday", :class => "text", :size => "3"}
+        %input{:type => "text", :name => "birthday", :class => "text", :size => "3", :validation => 'required'}
         %input.chk{:type => "checkbox", :name => "no-age",  :value => "true"}
         %label.long{:for => "no-age"} Masquer mon âge
       %li
@@ -100,24 +100,24 @@
         %label{:for => "location"} 
           Ville:
           %span.mandatory *
-        %input{:type => "text", :name => "location", :class => "text", :size => "15"}
+        %input{:type => "text", :name => "location", :class => "text", :size => "15", :validation => 'required'}
       %li
         %label{:for => "postcode"} 
           Code Postal:
           %span.mandatory *
-        %input{:type => "text", :name => "postcode", :class => "text", :size => "9"}
+        %input{:type => "text", :name => "postcode", :class => "text", :size => "9", :validation => 'required'}
       %li
         %label{:for => "address"} 
           Adresse:
           %span.mandatory *
-        %input{:type => "text", :name => "address", :class => "text", :size => "23"}
+        %input{:type => "text", :name => "address", :class => "text", :size => "23", :validation => 'required'}
         
       %li
         %label{:for => "website"} Site Internet:
         %input{:type => "text", :name => "website", :class => "text"}
       %li
         
-        
+      / minlength="2"
         
         
       %li.desc
