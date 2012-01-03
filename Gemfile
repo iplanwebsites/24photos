@@ -8,6 +8,7 @@ gem 'mongo'
 gem 'mongo_mapper'
 gem 'bson_ext'
 gem 'json'
+gem 'pony'
 gem 'cgi_fast_escape'
 # gem 'digest/sha1' # Possibly required?
 

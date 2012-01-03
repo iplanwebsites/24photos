@@ -49,26 +49,10 @@ get "/css/style.css" do
 end
 
 
-get "/template" do
-  haml :template
-end
-
 get "/" do
   haml :index
 end
 
-
-get "/perte-de-signal_x" do
-  haml :perte
-end
-
-get "/desjardins222" do
-  haml :desjardins
-end
-
-get "/bruno_photo" do
-  haml :bruno
-end
 
 # ================================================
 #       Apply form
@@ -78,13 +62,45 @@ post '/apply' do
   t = Time.now 
   #content_type 'text/html', :charset => 'utf-8'
   doc = params
-
+  
+  #       DB Add
+  # -------------------------------------------------
   uri = URI.parse(ENV['MONGOHQ_URL'])
   conn = Mongo::Connection.from_uri(ENV['MONGOHQ_URL'])
   db = conn.db(uri.path.gsub(/^\//, ''))
   coll = db.collection("24photos2012")
   coll.insert(doc)
   
+  #       Shoot email
+  # -------------------------------------------------
+  
+  msg = "Bonjour! <br/> "
+  msg+= "Votre demande de participation au projet <strong>24photos</strong> à bien été reçu! <br/> "
+  msg+= "Le projet débutera dès que suffisament de candidats auront appliquer, n'hésitez donc pas à partager l'invitation pour accélérer le processus.<br/>"
+  msg+= "À bientôt!"
+  msg+= "<br/> :)"
+  msg+= "<br/>"
+  msg+= "Félix et l'équipe de 24photos<br/> "
+  Pony.mail(
+      :from => '24photos' + "<" + 'info@24photos.org' + ">",
+      :to => params[:email],
+      :subject => 'bienvenu à 24photos!',
+      :body => msg,
+      :port => '587',
+      :via => :smtp,
+      :via_options => { 
+        :address              => 'smtp.sendgrid.net', 
+        :port                 => '587', 
+        :enable_starttls_auto => true, 
+        :user_name            => ENV['SENDGRID_USERNAME'], 
+        :password             => ENV['SENDGRID_PASSWORD'], 
+        :authentication       => :plain, 
+        :domain               => ENV['SENDGRID_DOMAIN']
+      })
+  
+  
+  #       Return true
+  # -------------------------------------------------
   if request.xhr?
     "true"
   else
