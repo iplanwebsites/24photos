@@ -75,17 +75,14 @@ post '/apply' do
   #       Shoot email
   # -------------------------------------------------
   
-  msg = "Bonjour! <br/> "
-  msg+= "Votre demande de participation au projet <strong>24photos</strong> à bien été reçu! <br/> "
-  msg+= "Le projet débutera dès que suffisament de candidats auront appliquer, n'hésitez donc pas à partager l'invitation pour accélérer le processus.<br/>"
-  msg+= "À bientôt!"
-  msg+= "<br/> :)"
-  msg+= "<br/>"
-  msg+= "Félix et l'équipe de 24photos<br/> "
+  
+  
+# msg = "Bonjour! <br/> " + "Votre demande de participation au projet <strong>24photos</strong> à bien été reçu! <br/> "+ "Le projet débutera dès que suffisament de candidats auront appliquer, n'hésitez donc pas à partager l'invitation pour accélérer le processus.<br/>" + "À bientôt!" + "<br/> :)" + "<br/>" + "Félix et l'équipe de 24photos<br/> "
+msg = "test!"
   Pony.mail(
       :from => '24photos' + "<" + 'info@24photos.org' + ">",
       :to => params[:email],
-      :subject => 'bienvenu à 24photos!',
+      :subject => 'bienvenu a 24photos!',
       :body => msg,
       :port => '587',
       :via => :smtp,
