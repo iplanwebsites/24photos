@@ -1,5 +1,7 @@
 # Todo
 
-
-- Set propper Domain for FB auth Online! - live domain
-- make sure DNS works
+- onClick event is buggy with the fancy Button!
+- correct text
+- add special-condition chek-boxes 
+- form validation
+- scroll to top isn'T consistent...

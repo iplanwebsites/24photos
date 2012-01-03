@@ -49,7 +49,7 @@ function lockFields(){
 
 function showForm(){
   //scroll to top
-  $('window').scrollTop(0);
+  $('window, body').scrollTop(0);
   $('section#home').hide();
   $('section#end').hide();
   $('section#form').show();
@@ -58,7 +58,7 @@ function showForm(){
 
 function showMerci(){
   //scroll to top
-  $('window').scrollTop(0);
+  $('window, body').scrollTop(0);
   $('section#home').hide();
   $('section#end').hide();
   $('section#form').hide();
@@ -67,7 +67,7 @@ function showMerci(){
 
 function showHome(){
   //scroll to top
-  $('window').scrollTop(0);
+  $('window, body').scrollTop(0);
   $('section#home').show();
   $('section#end').show();
   $('section#form').hide();
@@ -78,6 +78,7 @@ function showHome(){
 //   WIRE FB Connect BT
 /////////////////////////////
 $('a.connect').click(function(){
+  console.log('click-show form');
   showForm();
 });
 $('button.connect').click(function(){ //same deal, but fetch FB data first...
@@ -103,14 +104,27 @@ $('button.connect').click(function(){ //same deal, but fetch FB data first...
 });
 
 $('section#form button.submit').click(function(){
+  console.log('click-submit');
   $('form#apply').submit();
 })
 
 /////////////////////////////
 //   SUBMIT Application
 /////////////////////////////
-$("form#apply").submit(function(e){
+//$("#apply").validation(); // set validatoin rules
+
+//$("form#apply").validate();
+$("form#apply ").submit(function(e){
     e.preventDefault();
+    //var myForm = $("#apply");
+    //$("#apply").validation();
+    /*
+    if(! $("#apply").validate()) {
+            alert("oh noes.. error!");
+        }else{
+          alert("good!");
+        }
+    */
     var $inputs = $('#apply :input');
     // not sure if you wanted this, but I thought I'd add it.
     // get an associative array of just the values.
@@ -157,6 +171,7 @@ $("form#apply").submit(function(e){
 
   
 $('#logo img').click(function(){
+  console.log('click-home');
   showHome();
 });
   
