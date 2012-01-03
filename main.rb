@@ -5,6 +5,7 @@ require "cgi_fast_escape"
 require 'json'
 require 'uri'
 require 'mongo'
+require 'pony'
 
 # DataMapper setup - this will use the Rack env variable 'DATABASE_URL' if available
 # (it is provided by Heroku). Otherwise, create or use local SQLite development.db
