@@ -78,12 +78,12 @@ post '/apply' do
   
   
 # msg = "Bonjour! <br/> " + "Votre demande de participation au projet <strong>24photos</strong> à bien été reçu! <br/> "+ "Le projet débutera dès que suffisament de candidats auront appliquer, n'hésitez donc pas à partager l'invitation pour accélérer le processus.<br/>" + "À bientôt!" + "<br/> :)" + "<br/>" + "Félix et l'équipe de 24photos<br/> "
-msg = "test!"
+# msg = "test!"
   Pony.mail(
       :from => '24photos' + "<" + 'info@24photos.org' + ">",
       :to => params[:email],
       :subject => 'bienvenu a 24photos!',
-      :body => msg,
+      :body => erb(:email_welcome),
       :port => '587',
       :via => :smtp,
       :via_options => { 
